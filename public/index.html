@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Board API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Job Board API</h1>
+        <p>Server is running! Use the API endpoints below.</p>
+    </header>
+    <main>
+        <h2>Authentication</h2>
+        <ul>
+            <li><a href="/api/auth/register" target="_blank">POST /api/auth/register</a></li>
+            <li><a href="/api/auth/login" target="_blank">POST /api/auth/login</a></li>
+        </ul>
+
+        <h2>Employers</h2>
+        <ul>
+            <li><a href="/api/employers" target="_blank">GET /api/employers</a></li>
+            <li>POST /api/employers (admin only)</li>
+            <li>GET /api/employers/:id</li>
+            <li>PATCH /api/employers/:id (admin only)</li>
+            <li>DELETE /api/employers/:id (admin only)</li>
+        </ul>
+
+        <h2>Jobs</h2>
+        <ul>
+            <li><a href="/api/jobs" target="_blank">GET /api/jobs</a></li>
+            <li>POST /api/jobs (employer only)</li>
+            <li>GET /api/jobs/:id</li>
+            <li>PATCH /api/jobs/:id (owner/admin)</li>
+            <li>DELETE /api/jobs/:id (owner/admin)</li>
+        </ul>
+
+        <h2>Candidates</h2>
+        <ul>
+            <li>POST /api/candidates</li>
+            <li>GET /api/candidates/:id (employer/admin)</li>
+            <li>GET /api/candidates (employer/admin)</li>
+        </ul>
+
+        <h2>Applications</h2>
+        <ul>
+            <li>POST /api/applications</li>
+            <li>GET /api/applications/job/:jobId (employer)</li>
+            <li>PATCH /api/applications/:id/status (employer)</li>
+        </ul>
+
+        <h2>Notifications</h2>
+        <ul>
+            <li>GET /api/notifications</li>
+            <li>PATCH /api/notifications/:id/read</li>
+            <li>POST /api/notifications (admin only)</li>
+        </ul>
+
+        <h2>Admin</h2>
+        <ul>
+            <li>GET /api/admin/counts</li>
+            <li>GET /api/admin/applications/status</li>
+            <li>GET /api/admin/applications/per-job</li>
+            <li>GET /api/admin/applications/monthly</li>
+        </ul>
+    </main>
+    <footer>
+        &copy; 2025 Job Board API
+    </footer>
+</body>
+
+</html>
